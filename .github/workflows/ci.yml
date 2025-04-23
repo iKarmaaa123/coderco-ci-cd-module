@@ -1,0 +1,13 @@
+name: coderco ci workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: Ubuntu-latest
+    steps:
+    - name: checkout code   #this will checkout our whole code for our Ubuntu machine
+      uses: actions/checkout@v2
+
+    - name: We are testing this workflow
+      run: echo "we are testing this workflow! cool"
