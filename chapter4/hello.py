@@ -1,4 +1,4 @@
-def say_hello ():
+def test_say_hello ():
     return "Hello World!"
 
 if __name__ == "__main__":
