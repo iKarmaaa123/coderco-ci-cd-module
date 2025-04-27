@@ -20,16 +20,16 @@ jobs:
         python-version: ${{matrix.python-version}}
 
     - name: installing dependencies
-      run: | 
+      run: |
+        cd chapter4
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt fi
-      working-directory: chapter4
 
     - name: run tests
-      run: | 
+      run: |
+        cd chapter4
         python hello.py
         python -m unittest discover
-      working-directory: chapter4
 
     - name: notify us if success
       run: echo "Tests passed on ${{ matrix.python-version }}"
