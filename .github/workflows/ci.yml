@@ -1,13 +1,36 @@
-name: coderco ci workflow
+name: CoderCo Combined
 
 on: [push]
 
 jobs:
   build:
     runs-on: Ubuntu-latest
+
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
+
     steps:
-    - name: checkout code   #this will checkout our whole code for our Ubuntu machine
+    - name: checkout
       uses: actions/checkout@v2
 
-    - name: We are testing this workflow
-      run: echo "we are testing this workflow! cool"
+    - name: setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: installing dependencies
+      run: | 
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt fi
+      working-directory: /chapter4
+
+    - name: run tests
+      run: | 
+        python hello.py
+        python -m unittest discover
+      working-directory: /chapter4
+
+    - name: notify us if success
+      run: echo "Tests passed on ${{ matrix.python-version }}"
+      if: success()
