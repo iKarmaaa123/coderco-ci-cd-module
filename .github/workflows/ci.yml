@@ -23,7 +23,6 @@ jobs:
     - name: run tests
       run: |
         cd chapter4
-        python hello.py
         python -m unittest discover
 
     - name: notify us if success
