@@ -14,5 +14,30 @@ This can be useful testing across different environments (e.g., Python versions,
 
 ![alt text](image.png)
 
+# Creating custom actions
+
+- Custom actions are reusable units of code that automate specific tasks in your CI/CD pipeline.
+
+# Steps to Create a Custom Action:
+
+- Create a New Repository for your action
+
+- Define the Action Metadata in an action.yml file
+
+- Write the Code for your action
+
+- Publish Your Action to GitHub Marketplace (optional).
+
+# Sharing and reusing actions in different projects
+
+- Benefits of Reusable Actions:
+
+- Consistency
+
+- Efficiency
+
+![alt text](image-1.png)
+
+
 
 
