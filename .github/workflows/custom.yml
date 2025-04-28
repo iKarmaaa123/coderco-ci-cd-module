@@ -13,6 +13,4 @@ jobs:
    - name: using custom action 
      uses: iKarmaaa123/coderco-custom@main
      with:
-       who-to-greet: 'The CoderCo Team'
-
-       ###dngndf
+       who-to-greet: 'CoderCo Team'
