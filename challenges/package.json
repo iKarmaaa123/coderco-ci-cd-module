@@ -1,0 +1,14 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "A basic Node.js application",
+  "main": "hello.js",
+  "scripts": {
+    "start": "node hello.js"
+  },
+"keywords": [],
+"author": "Waael",
+"license": "nothing",
+"dependencies": {},
+"devDependencies": {}
+}

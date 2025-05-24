@@ -1,0 +1,24 @@
+name: pushing Docker image to Docker Hub
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest,
+
+    steps:
+    - name: checkout repository
+      uses: actions/checkout@v4
+
+    - name: Log in into DockerHub
+      uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: building, tagging and pushing docker image
+      run: |
+        docker build -t cicdimage .
+        docker tag cicdimage ${{ REPO_URL }}
+        docker push ${{ REPO_URL }}
+      working-directory: challenges
