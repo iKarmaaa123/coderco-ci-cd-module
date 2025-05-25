@@ -22,3 +22,4 @@ jobs:
         docker tag cicdimage ikarmaaa123/basicjavascriptapp
         docker push ikarmaaa123/basicjavascriptapp
       working-directory: challenges
+#mssdn
