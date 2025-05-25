@@ -18,7 +18,7 @@ jobs:
 
     - name: building, tagging and pushing docker image
       run: |
-        cd challenges
         docker build -t cicdimage .
-        docker tag cicdimage ${{ REPO_URL }}
-        docker push ${{ REPO_URL }}
+        docker tag cicdimage ikarmaaa123/basicjavascriptapp
+        docker push ikarmaaa123/basicjavascriptapp
+      working-directory: challenges
